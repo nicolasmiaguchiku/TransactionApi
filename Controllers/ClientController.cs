@@ -23,7 +23,7 @@ namespace TransactionsApi.Controllers
         public async Task<IActionResult> RegisterClient(RegisterViewModel registerClient)
         {
             var client = await _clientServices.Register(registerClient);
-            return Ok(client);
+            return Ok(client.Message);
         }
 
         [HttpPost]
@@ -31,9 +31,14 @@ namespace TransactionsApi.Controllers
         public async Task<IActionResult> Login(LoginViewModel client)
         {
 
-            var user = await _clientServices!.AuthenticateUser(client.Email, client.Password);
+            var authResult = await _clientServices!.AuthenticateUser(client.Email, client.Password);
 
-            var token = TokenService.GenerateToken(user!);
+            if (!authResult.IsSuccess || authResult.Data == null)
+            {
+                return Unauthorized(authResult.Message);
+            }
+
+            var token = TokenService.GenerateToken(authResult.Data);
 
             var cookieOptions = new CookieOptions
             {

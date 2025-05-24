@@ -9,6 +9,7 @@ namespace TransactionsApi.Controllers
 {
     [ApiController]
     [Route("ApiController")]
+    [Authorize]
     public class TransactionsController : ControllerBase
     {
 
@@ -19,7 +20,7 @@ namespace TransactionsApi.Controllers
             _transactionServices = transactionServices ?? throw new ArgumentNullException(nameof(transactionServices));
         }
 
-        [Authorize]
+        
         [HttpPost]
         [Route("AddTransaction")]
         public async Task<IActionResult> AddTransaction([FromBody] TransactionViewModel transaction)
@@ -52,7 +53,6 @@ namespace TransactionsApi.Controllers
 
         }
 
-        [Authorize]
         [HttpGet]
         [Route("GetTransactions")]
         public async Task<IActionResult> GetransactionsClient()
@@ -81,7 +81,7 @@ namespace TransactionsApi.Controllers
 
         }
 
-        [Authorize]
+  
         [HttpGet]
         [Route("GetInboundTransactions")]
         public async Task<IActionResult> GetTransactionsIncome()
@@ -102,7 +102,7 @@ namespace TransactionsApi.Controllers
             }
         }
 
-        [Authorize]
+    
         [HttpGet]
         [Route("GetOutgoingTransactions")]
         public async Task<IActionResult> GetTransactionsExpense()

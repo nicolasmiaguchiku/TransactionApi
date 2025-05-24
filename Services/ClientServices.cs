@@ -1,11 +1,13 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Azure;
+using Microsoft.EntityFrameworkCore;
+using System.Runtime.InteropServices;
 using TransactionsApi.Context;
 using TransactionsApi.Interfaces;
 using TransactionsApi.Models;
 using TransactionsApi.Models.ModelsResquets;
 
 namespace TransactionsApi.Services
-{
+{   
     public class ClientServices : IClientServices
     {
         private readonly DataContext _dataContext;
@@ -17,40 +19,55 @@ namespace TransactionsApi.Services
             _securityServices = securityServices;
         }
 
-        public async Task<Client?> AuthenticateUser(string email,string password)
+        public async Task<ResultData<Client>> AuthenticateUser(string email,string password)
         {
             var client = await _dataContext.Clients.SingleOrDefaultAsync(x => x.Email == email);
 
+            ResultData<Client> result;
 
             if (client == null || string.IsNullOrEmpty(client.PasswordHash) || !_securityServices.VerifyPassword(password, client.PasswordHash))
             {
-                throw new InvalidOperationException("Email ou senha incorreto");
+                result = ResultData<Client>.Error("Email ou senha incorreto");
             }
-
-            return client;
+            else
+            {
+                result = ResultData<Client>.Success(client);
+            }
+            return result;
 
         }
 
-        public async Task<Client> Register(RegisterViewModel clientRegister)
+        public async Task<Result> Register(RegisterViewModel clientRegister)
         {
             bool exists = await _dataContext.Clients.AnyAsync(c => c.Email == clientRegister.Email);
+            ResultData<Client> result;
 
             if (exists)
-                throw new InvalidOperationException("Email já registrado");
-
-            var passwordEncrypted = _securityServices.EncryptPassword(clientRegister.Password);
-
-            var newClient = new Client
             {
-                Name = clientRegister.Name,
-                Email = clientRegister.Email,
-                PasswordHash = passwordEncrypted
-            };
+                string? message = "Email já registrado";
 
-            _dataContext.Clients.Add(newClient);
-            await _dataContext.SaveChangesAsync();
+                result = ResultData<Client>.Error(message);
+            }
+            else 
+            {
+                var passwordEncrypted = _securityServices.EncryptPassword(clientRegister.Password);
 
-            return newClient;
+                var newClient = new Client
+                {
+                    Name = clientRegister.Name,
+                    Email = clientRegister.Email,
+                    PasswordHash = passwordEncrypted
+                };
+
+
+                result = ResultData<Client>.Success(newClient);
+
+                _dataContext.Clients.Add(newClient);
+                await _dataContext.SaveChangesAsync();
+
+            }
+
+            return result;
         }
     }
 }

@@ -5,8 +5,8 @@ namespace TransactionsApi.Interfaces
 {
     public interface IClientServices
     {
-        public Task<Client> Register(RegisterViewModel clientResgister);
+        public Task<Result> Register(RegisterViewModel clientResgister);
 
-        public Task<Client?> AuthenticateUser(string email,string password);
+        public Task<ResultData<Client>> AuthenticateUser(string email,string password);
     }
 }

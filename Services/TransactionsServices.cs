@@ -39,14 +39,16 @@ namespace TransactionsApi.Services
             
         }
 
-        public async Task<Transaction> AddTransacion(TransactionViewModel newTransaction, int Id)
+        public async Task<ResultData<Transaction>> AddTransacion(TransactionViewModel newTransaction, int Id)
         {
             var wallet = await _dataContext.Wallets
                                    .FirstOrDefaultAsync(w => w.ClientId == Id);
 
+            ResultData<Transaction> result;
+
             if (wallet == null)
             {
-                throw new InvalidOperationException("Carteira não encontrada para o usuário.");
+                result = ResultData<Transaction>.Error("Carteira não encontrada");
             }
             else
             {
@@ -63,8 +65,10 @@ namespace TransactionsApi.Services
                 _dataContext.Transactions.Add(transaction);
                 await _dataContext.SaveChangesAsync();
 
-                return transaction;
+                result = ResultData<Transaction>.Success(transaction);
+
             }
+                return result;
         }
 
         public async Task<List<Transaction>> GetTransactionsIncome(int clientId)
