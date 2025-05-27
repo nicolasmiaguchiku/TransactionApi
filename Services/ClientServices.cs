@@ -31,7 +31,7 @@ namespace TransactionsApi.Services
             }
             else
             {
-                result = ResultData<Client>.Success(client);
+                result = ResultData<Client>.Success(client, "");
             }
             return result;
 
@@ -60,7 +60,7 @@ namespace TransactionsApi.Services
                 };
 
 
-                result = ResultData<Client>.Success(newClient);
+                result = ResultData<Client>.Success(newClient, "Usuário registrado com sucesso");
 
                 _dataContext.Clients.Add(newClient);
                 await _dataContext.SaveChangesAsync();

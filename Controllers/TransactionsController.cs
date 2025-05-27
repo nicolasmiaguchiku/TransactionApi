@@ -20,7 +20,7 @@ namespace TransactionsApi.Controllers
             _transactionServices = transactionServices ?? throw new ArgumentNullException(nameof(transactionServices));
         }
 
-        
+
         [HttpPost]
         [Route("AddTransaction")]
         public async Task<IActionResult> AddTransaction([FromBody] TransactionViewModel transaction)
@@ -37,7 +37,6 @@ namespace TransactionsApi.Controllers
             {
                 return BadRequest(ModelState);
             }
-
 
             try
             {
@@ -63,16 +62,15 @@ namespace TransactionsApi.Controllers
 
             try
             {
-                var transactions = await _transactionServices.GetTransactionsByUser(userId);
-                return Ok(transactions);
-            }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(new { error = ex.Message });
-            }
-            catch (InvalidOperationException ex)
-            {
-                return NotFound(new { error = ex.Message });
+                var transactionsResult = await _transactionServices.GetTransactionsByUser(userId);
+
+                if (!transactionsResult.IsSuccess || transactionsResult.Data == null || transactionsResult.Data.Count == 0)
+                {
+
+                    return StatusCode(200, transactionsResult.Message);
+                }
+
+                return Ok(transactionsResult.Data);
             }
             catch (Exception ex)
             {
@@ -81,7 +79,7 @@ namespace TransactionsApi.Controllers
 
         }
 
-  
+
         [HttpGet]
         [Route("GetInboundTransactions")]
         public async Task<IActionResult> GetTransactionsIncome()
@@ -94,7 +92,11 @@ namespace TransactionsApi.Controllers
             {
                 var transactionIncome = await _transactionServices.GetTransactionsIncome(userId);
 
-                return Ok(transactionIncome);
+                if (transactionIncome.Data?.Count == 0)
+                {
+                    return StatusCode(200, transactionIncome?.Message);
+                }
+                    return Ok(transactionIncome.Data);
             }
             catch (Exception ex)
             {
@@ -102,7 +104,7 @@ namespace TransactionsApi.Controllers
             }
         }
 
-    
+
         [HttpGet]
         [Route("GetOutgoingTransactions")]
         public async Task<IActionResult> GetTransactionsExpense()
@@ -115,11 +117,68 @@ namespace TransactionsApi.Controllers
             {
                 var transactionExpense = await _transactionServices.GetTransactionExpense(clientId);
 
-                return Ok(transactionExpense);
+                if(transactionExpense.Data?.Count == 0)
+                {
+                    return StatusCode(200, transactionExpense?.Message);
+                }
+
+                return Ok(transactionExpense.Data);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 return StatusCode(500, new { error = "Erro inesperado ao buscar transações.", details = ex.Message });
+            }
+        }
+
+        [HttpPut]
+        [Route("EditTransaction/{id}")]
+        public async Task<IActionResult> EditTransaction([FromBody] TransactionViewModel editTransaction, int id)
+        {
+            var clientClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            var clientId = int.Parse(clientClaim!);
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            try
+            {
+                var editedtransaction = await _transactionServices.EditTransaction(editTransaction, clientId, id);
+                if (!editedtransaction.IsSuccess || editedtransaction.Data == null)
+                {
+                    return StatusCode(404, editedtransaction.Message);
+                }
+                return Ok(editedtransaction.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = "Erro inesperado ao editar essa transação", details = ex.Message });
+            }
+        }
+
+        [HttpDelete]
+        [Route("DeleteTransaction/{TransactionId}")]
+        public async Task<IActionResult> DeleteTransaction(int TransactionId)
+        {
+            var clientClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            var clientId = int.Parse(clientClaim!);
+
+            try
+            {
+                var deleteTransaction = await _transactionServices.DeleteTransaction(TransactionId, clientId);
+
+                if (!deleteTransaction.IsSuccess || deleteTransaction.Data == null)
+                {
+                    return StatusCode(404, deleteTransaction.Message);
+                }
+                return Ok(deleteTransaction.Message);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { error = "Erro inesperado ao deletar essa transação", details = ex.Message });
             }
         }
 

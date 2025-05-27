@@ -21,7 +21,7 @@
             Data = data;
         }
 
-        public static ResultData<T> Success(T data) => new(data);
+        public static ResultData<T> Success(T data, string message) => new(data, true, message);
 
         public static ResultData<T> Error(string message) => new(default, false, message);
     }

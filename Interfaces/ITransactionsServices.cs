@@ -5,10 +5,12 @@ namespace TransactionsApi.Interfaces
 {
     public interface ITransactionsServices
     {
-        public Task<ResultData<Transaction>> AddTransacion(TransactionViewModel newTransaction, int userId);
-        public Task<IReadOnlyList<Transaction>> GetTransactionsByUser(int clientId);
-        public Task<List<Transaction>> GetTransactionsIncome(int clientId);
-        public Task<List<Transaction>> GetTransactionExpense(int clientId);
+        public Task<ResultData<Transaction>> AddTransacion(TransactionViewModel newTransaction, int clientId);
+        public Task<ResultData<List<Transaction>>> GetTransactionsByUser(int clientId);
+        public Task<ResultData<List<Transaction>>> GetTransactionsIncome(int clientId);
+        public Task<ResultData<List<Transaction>>> GetTransactionExpense(int clientId);
+        public Task<ResultData<Transaction>> EditTransaction(TransactionViewModel editTransaction, int clientId, int transactionId);
+        public Task<ResultData<Transaction>> DeleteTransaction(int transactionId, int clientId);
      
     }
 }

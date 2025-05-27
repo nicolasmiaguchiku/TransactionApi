@@ -1,4 +1,4 @@
-﻿
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TransactionsApi.Models.ModelsResquets
 {
@@ -10,8 +10,10 @@ namespace TransactionsApi.Models.ModelsResquets
     }
     public class TransactionViewModel
     {
+        [Required(ErrorMessage = "O título da transação é obrigatório.")]
         public string Title { get; set; } = string.Empty;
 
+        [Range(0.01, double.MaxValue, ErrorMessage = "O valor da transação deve ser maior que zero.")]
         public double Amount { get; set; }
 
         public DateTime Date { get; set; } = DateTime.Now;

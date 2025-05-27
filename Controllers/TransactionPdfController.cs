@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 using TransactionsApi.Interfaces;
+using System.Collections.Generic;
 
 namespace TransactionsApi.Controllers
 {
@@ -31,7 +32,12 @@ namespace TransactionsApi.Controllers
                 var transactions = await _transactionsServices.GetTransactionsByUser(userId);
                 string userName = User.Identity?.Name ?? $"Usuário_{userId}";
 
-                var pdfBytes = _pdfService.GenerateStatementPdf(transactions.ToList(), userName);
+                if (!transactions.IsSuccess || transactions.Data == null)
+                {
+                    return StatusCode(200, transactions.Message );
+                }
+
+                var pdfBytes = _pdfService.GenerateStatementPdf(transactions.Data, userName);
 
                 return File(pdfBytes, "application/pdf", "ExtratoTransacoes.pdf");
             }
