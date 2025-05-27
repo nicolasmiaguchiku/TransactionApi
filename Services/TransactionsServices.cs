@@ -57,6 +57,7 @@ namespace TransactionsApi.Services
             {
                 Transaction transaction = new()
                 {
+                    TransactionId = new Guid(),
                     Title = newTransaction.Title,
                     Amount = newTransaction.Amount,
                     Descriptor = newTransaction.Descriptor,
@@ -126,7 +127,7 @@ namespace TransactionsApi.Services
             return result;
         }
 
-        public async Task<ResultData<Transaction>> EditTransaction(TransactionViewModel editTransaction, int clientId, int transactionId)
+        public async Task<ResultData<Transaction>> EditTransaction(TransactionViewModel editTransaction, int clientId, Guid transactionId)
         {
             var wallet = await _dataContext.Wallets
                                            .Include(w => w.Transactions)
@@ -158,7 +159,7 @@ namespace TransactionsApi.Services
 
         }
 
-        public async Task<ResultData<Transaction>> DeleteTransaction(int transactionId, int clientId)
+        public async Task<ResultData<Transaction>> DeleteTransaction(Guid transactionId, int clientId)
         {
             var wallet = await _dataContext.Wallets
                                            .Include(w => w.Transactions)

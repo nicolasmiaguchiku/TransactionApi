@@ -9,8 +9,8 @@ namespace TransactionsApi.Interfaces
         public Task<ResultData<List<Transaction>>> GetTransactionsByUser(int clientId);
         public Task<ResultData<List<Transaction>>> GetTransactionsIncome(int clientId);
         public Task<ResultData<List<Transaction>>> GetTransactionExpense(int clientId);
-        public Task<ResultData<Transaction>> EditTransaction(TransactionViewModel editTransaction, int clientId, int transactionId);
-        public Task<ResultData<Transaction>> DeleteTransaction(int transactionId, int clientId);
+        public Task<ResultData<Transaction>> EditTransaction(TransactionViewModel editTransaction, int clientId, Guid transactionId);
+        public Task<ResultData<Transaction>> DeleteTransaction(Guid transactionId, int clientId);
      
     }
 }

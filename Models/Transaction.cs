@@ -7,7 +7,7 @@ namespace TransactionsApi.Models
     public class Transaction
     {
         [Key]
-        public int TransactionId { get; set; }
+        public Guid TransactionId { get; set; }
         public int WalletId { get; set; }
         [JsonIgnore]
         public Wallet? Wallet { get; set; }
@@ -16,6 +16,8 @@ namespace TransactionsApi.Models
         public double Amount { get; set; }
         public DateTime Date { get; set; }
         public string? Descriptor { get; set; }
+
+
 
     }
 }

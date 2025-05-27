@@ -132,7 +132,7 @@ namespace TransactionsApi.Controllers
 
         [HttpPut]
         [Route("EditTransaction/{id}")]
-        public async Task<IActionResult> EditTransaction([FromBody] TransactionViewModel editTransaction, int id)
+        public async Task<IActionResult> EditTransaction([FromBody] TransactionViewModel editTransaction, Guid id)
         {
             var clientClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 
@@ -160,7 +160,7 @@ namespace TransactionsApi.Controllers
 
         [HttpDelete]
         [Route("DeleteTransaction/{TransactionId}")]
-        public async Task<IActionResult> DeleteTransaction(int TransactionId)
+        public async Task<IActionResult> DeleteTransaction(Guid TransactionId)
         {
             var clientClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
 

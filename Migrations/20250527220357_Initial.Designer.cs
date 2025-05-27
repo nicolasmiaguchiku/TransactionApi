@@ -12,7 +12,7 @@ using TransactionsApi.Context;
 namespace TransactionsApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20250409030653_Initial")]
+    [Migration("20250527220357_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -49,11 +49,9 @@ namespace TransactionsApi.Migrations
 
             modelBuilder.Entity("TransactionsApi.Models.Transaction", b =>
                 {
-                    b.Property<int>("TransactionId")
+                    b.Property<Guid>("TransactionId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("TransactionId"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("Amount")
                         .HasColumnType("float");
