@@ -22,5 +22,13 @@ namespace TransactionsApi.Models.ModelsResquets
 
         public string Descriptor { get; set; } = string.Empty;
 
+        public TransactionViewModel(string title, double amount, DateTime date, TransactionType type, string descriptor)
+        {
+            Title = title;
+            Amount = amount;
+            Date = date;
+            Type = type;
+            Descriptor = descriptor;
+        }
     }
 }
