@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|c:\\users\\nicol\\onedrive\\\u00E1rea de trabalho\\transactionsapi\\transactionapi\\mappings\\transactionmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|solutionrelative:mappings\\transactionmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|c:\\users\\nicol\\onedrive\\\u00E1rea de trabalho\\transactionsapi\\transactionapi\\migrations\\20250527220357_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|solutionrelative:migrations\\20250527220357_initial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|c:\\users\\nicol\\onedrive\\\u00E1rea de trabalho\\transactionsapi\\transactionapi\\context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|solutionrelative:context\\datacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|c:\\users\\nicol\\onedrive\\\u00E1rea de trabalho\\transactionsapi\\transactionapi\\models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|solutionrelative:models\\transaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|c:\\users\\nicol\\onedrive\\\u00E1rea de trabalho\\transactionsapi\\transactionapi\\models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|solutionrelative:models\\client.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|c:\\users\\nicol\\onedrive\\\u00E1rea de trabalho\\transactionsapi\\transactionapi\\mappings\\walletmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|solutionrelative:mappings\\walletmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|c:\\users\\nicol\\onedrive\\\u00E1rea de trabalho\\transactionsapi\\transactionapi\\mappings\\clientmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|solutionrelative:mappings\\clientmap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|c:\\users\\nicol\\onedrive\\\u00E1rea de trabalho\\transactionsapi\\transactionapi\\models\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A0E4CF6F-222A-4A68-2627-51C293BFCD79}|TransactionsApi.csproj|solutionrelative:models\\wallet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,111 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "20250527220357_Initial.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Migrations\\20250527220357_Initial.cs",
-              "RelativeDocumentMoniker": "Migrations\\20250527220357_Initial.cs",
-              "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Migrations\\20250527220357_Initial.cs",
-              "RelativeToolTip": "Migrations\\20250527220357_Initial.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwDQAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T01:02:51.711Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DataContext.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Context\\DataContext.cs",
-              "RelativeDocumentMoniker": "Context\\DataContext.cs",
-              "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Context\\DataContext.cs*",
-              "RelativeToolTip": "Context\\DataContext.cs*",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA1wBkAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T00:43:51.946Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClientMap.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Mappings\\ClientMap.cs",
-              "RelativeDocumentMoniker": "Mappings\\ClientMap.cs",
-              "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Mappings\\ClientMap.cs",
-              "RelativeToolTip": "Mappings\\ClientMap.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T00:43:14.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TransactionMap.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Mappings\\TransactionMap.cs",
-              "RelativeDocumentMoniker": "Mappings\\TransactionMap.cs",
-              "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Mappings\\TransactionMap.cs*",
-              "RelativeToolTip": "Mappings\\TransactionMap.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T00:43:46.522Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "WalletMap.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Mappings\\WalletMap.cs",
-              "RelativeDocumentMoniker": "Mappings\\WalletMap.cs",
-              "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Mappings\\WalletMap.cs",
-              "RelativeToolTip": "Mappings\\WalletMap.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T00:43:24.604Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Client.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Models\\Client.cs",
-              "RelativeDocumentMoniker": "Models\\Client.cs",
-              "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Models\\Client.cs",
-              "RelativeToolTip": "Models\\Client.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T00:39:30.138Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
               "Title": "Transaction.cs",
               "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Models\\Transaction.cs",
               "RelativeDocumentMoniker": "Models\\Transaction.cs",
               "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Models\\Transaction.cs",
               "RelativeToolTip": "Models\\Transaction.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T00:44:49.843Z",
+              "WhenOpened": "2025-06-09T02:09:20.995Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Wallet.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Models\\Wallet.cs",
-              "RelativeDocumentMoniker": "Models\\Wallet.cs",
-              "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Models\\Wallet.cs",
-              "RelativeToolTip": "Models\\Wallet.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Client.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Models\\Client.cs",
+              "RelativeDocumentMoniker": "Models\\Client.cs",
+              "ToolTip": "C:\\Users\\nicol\\OneDrive\\\u00C1rea de Trabalho\\TransactionsApi\\TransactionApi\\Models\\Client.cs",
+              "RelativeToolTip": "Models\\Client.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-09T00:45:03.762Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-09T02:08:29.134Z"
             }
           ]
         }
