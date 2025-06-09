@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 using TransactionsApi.Models;
 
 namespace TransactionsApi.Context
@@ -15,16 +16,7 @@ namespace TransactionsApi.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Client>()
-                .HasOne(c => c.Wallet)
-                .WithOne(w => w.Client)
-                .HasForeignKey<Wallet>(w => w.ClientId);
-
-            modelBuilder.Entity<Wallet>()
-                .HasMany(w => w.Transactions)
-                .WithOne(t => t.Wallet)
-                .HasForeignKey(t => t.WalletId);
-
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
     }

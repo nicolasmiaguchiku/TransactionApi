@@ -14,7 +14,7 @@ namespace TransactionsApi.Models.ModelsResquets
         public string Title { get; set; } = string.Empty;
 
         [Range(0.01, double.MaxValue, ErrorMessage = "O valor da transação deve ser maior que zero.")]
-        public double Amount { get; set; }
+        public decimal Amount { get; set; }
 
         public DateTime Date { get; set; } = DateTime.Now;
 
@@ -22,7 +22,7 @@ namespace TransactionsApi.Models.ModelsResquets
 
         public string Descriptor { get; set; } = string.Empty;
 
-        public TransactionViewModel(string title, double amount, DateTime date, TransactionType type, string descriptor)
+        public TransactionViewModel(string title, decimal amount, DateTime date, TransactionType type, string descriptor)
         {
             Title = title;
             Amount = amount;

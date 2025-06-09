@@ -1,6 +1,4 @@
-﻿using Azure;
-using Microsoft.EntityFrameworkCore;
-using System.Runtime.InteropServices;
+﻿using Microsoft.EntityFrameworkCore;
 using TransactionsApi.Context;
 using TransactionsApi.Interfaces;
 using TransactionsApi.Models;

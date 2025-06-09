@@ -869,7 +869,6 @@ C:\Users\nicol\OneDrive\Área de Trabalho\TransactionsApi\TransactionApi\obj\Deb
 C:\Users\nicol\OneDrive\Área de Trabalho\TransactionsApi\TransactionApi\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\nicol\OneDrive\Área de Trabalho\TransactionsApi\TransactionApi\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\nicol\OneDrive\Área de Trabalho\TransactionsApi\TransactionApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\nicol\OneDrive\Área de Trabalho\TransactionsApi\TransactionApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\nicol\OneDrive\Área de Trabalho\TransactionsApi\TransactionApi\obj\Debug\net8.0\Transact.9FA19344.Up2Date
 C:\Users\nicol\OneDrive\Área de Trabalho\TransactionsApi\TransactionApi\obj\Debug\net8.0\TransactionsApi.dll
 C:\Users\nicol\OneDrive\Área de Trabalho\TransactionsApi\TransactionApi\obj\Debug\net8.0\refint\TransactionsApi.dll

@@ -12,6 +12,5 @@ namespace TransactionsApi.Models
         [JsonIgnore]
         public Client? Client { get; set; }
         public List<Transaction>? Transactions { get; set; }
-
     }
 }
