@@ -1,7 +1,14 @@
-﻿namespace TransactionsApi.Settings
+﻿using DotNetEnv;
+
+namespace TransactionsApi.Settings
 {
     public static class SecretKey
     {
-        public static string KeySecret = "fedaf7d8863b48e197b9287d492b708e";
+        public static string Key { get; }
+        static SecretKey()
+        {
+            Env.Load();
+            Key = Environment.GetEnvironmentVariable("SECRET_KEY") ?? string.Empty;
+        }
     }
 }

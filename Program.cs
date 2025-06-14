@@ -1,6 +1,8 @@
 using QuestPDF.Infrastructure;
 using TransactionsApi.Settings;
+using DotNetEnv;
 
+Env.Load();
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
@@ -8,8 +10,8 @@ QuestPDF.Settings.License = LicenseType.Community;
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var key = SecretKey.KeySecret;
-builder.Services.ConfigureAuthentication(key);
+
+builder.Services.ConfigureAuthentication(SecretKey.Key);
 
 builder.Services.ConfigureDateBase(builder.Configuration);
 
